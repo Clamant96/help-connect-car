@@ -1,0 +1,126 @@
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import User from '../models/User';
+import Veiculo from '../models/Veiculo';
+import connectDB from '../config/database';
+
+dotenv.config();
+
+const seedDatabase = async () => {
+  try {
+    await connectDB();
+
+    // Limpar dados existentes
+    await Veiculo.deleteMany({});
+
+    // Criar veículos
+    const veiculos = await Veiculo.create([
+        {
+            "name": "Partner",
+            "year": "2016",
+            "type": "Utilitário",
+            "engine": "1.6",
+            "size": 2,
+            "disponivel": true
+        },
+        {
+            "name": "Fiorino",
+            "year": "2017",
+            "type": "Utilitário leve",
+            "engine": "1.6",
+            "size": 2,
+            "disponivel": true
+        },
+        {
+            "name": "Doblo",
+            "year": "2018",
+            "type": "Minivan",
+            "engine": "1.8",
+            "size": 7,
+            "disponivel": true
+        },
+        {
+            "name": "Toro",
+            "year": "2016",
+            "type": "Picape média",
+            "engine": "1.6",
+            "size": 5,
+            "disponivel": true
+        },
+        {
+            "name": "Ford Ká",
+            "year": "2019",
+            "type": "Sedan Compacto",
+            "engine": "1.0",
+            "size": 5,
+            "disponivel": true
+        },
+        {
+            "name": "Versa",
+            "year": "2019",
+            "type": "Sedan médio",
+            "engine": "1.4",
+            "size": 5,
+            "disponivel": true
+        },
+        {
+            "name": "Jetta",
+            "year": "2021",
+            "type": "Sedan grande",
+            "engine": "2.0",
+            "size": 5,
+            "disponivel": true
+        },
+        {
+            "name": "Saveiro",
+            "year": "2018",
+            "type": "Picape leve-média",
+            "engine": "1.6",
+            "size": 5,
+            "disponivel": true
+        },
+        {
+            "name": "Strada",
+            "year": "2016",
+            "type": "Picape leve",
+            "engine": "1.4",
+            "size": 2,
+            "disponivel": true
+        },
+        {
+            "name": "Camaro",
+            "year": "2017",
+            "type": "Coupé",
+            "engine": "2.0",
+            "size": 4,
+            "disponivel": true
+        },
+        {
+            "name": "T-Cross",
+            "year": "2020",
+            "type": "Crossover",
+            "engine": "1.6",
+            "size": 5,
+            "disponivel": true
+        },
+        {
+            "name": "Tiggo 8",
+            "year": "2021",
+            "type": "SUV Grande",
+            "engine": "2.0",
+            "size": 7,
+            "disponivel": true
+        }
+        ]);
+
+    console.log('Database seeded successfully!');
+    console.log(`Created ${veiculos.length} vehicles`);
+    
+    process.exit(0);
+  } catch (error) {
+    console.error('Error seeding database:', error);
+    process.exit(1);
+  }
+};
+
+seedDatabase();
