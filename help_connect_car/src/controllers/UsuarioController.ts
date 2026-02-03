@@ -1,10 +1,12 @@
 import { Request, Response } from 'express';
 import User from '../models/User';
+import bcrypt from 'bcryptjs';
 
 class UsuarioController {
   // Criar usuário
   public async create(req: Request, res: Response): Promise<Response> {
     try {
+      var senhaCriptografada = '';
       const { nome, username, senha } = req.body;
 
       // Verificar se username já existe
@@ -13,10 +15,20 @@ class UsuarioController {
         return res.status(400).json({ error: 'Username já cadastrado' });
       }
 
+      try {
+        const salt = await bcrypt.genSalt(10);
+        senhaCriptografada = await bcrypt.hash(senha, salt);
+      } catch (error: any) {
+        console.log('Erro ao criptografar senha:', error);
+        senhaCriptografada = senha
+      }
+
+      console.log('senhaCriptografada: ', senhaCriptografada);
+
       const user = await User.create({
         nome,
         username,
-        senha,
+        senha: senhaCriptografada,
         historico_reserva: [],
       });
 

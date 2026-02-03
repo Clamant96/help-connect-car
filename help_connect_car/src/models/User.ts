@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document, Types } from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 export interface IUser extends Document {
   nome: string;
@@ -8,6 +9,9 @@ export interface IUser extends Document {
   historico_reserva: Types.ObjectId[]; // Histórico de reservas
   createdAt: Date;
   updatedAt: Date;
+
+  comparePassword(candidatePassword: string): Promise<boolean>;
+  toJSON(): any;
 }
 
 const UserSchema: Schema = new Schema({
@@ -45,6 +49,16 @@ const UserSchema: Schema = new Schema({
 }, {
   timestamps: true,
 });
+
+// Método para comparar senha
+UserSchema.methods.comparePassword = async function(candidatePassword: string): Promise<boolean> {
+  try {
+    return await bcrypt.compare(candidatePassword, this.senha);
+  } catch (error) {
+    console.error('Erro ao comparar senha:', error);
+    return false;
+  }
+};
 
 // Métodos estáticos para queries específicas
 UserSchema.statics.findWithReservaAtiva = function(query: any) {

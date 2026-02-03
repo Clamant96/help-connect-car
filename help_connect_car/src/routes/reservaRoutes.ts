@@ -1,7 +1,10 @@
 import { Router } from 'express';
 import ReservaController from '../controllers/ReservaController';
+import { authenticate } from '../middlewares/auth';
 
 const router = Router();
+
+router.use(authenticate); // todas as rodas precisam de autenticacao
 
 // Rotas de reserva
 router.post('/reserva', ReservaController.create); // Reservar veículo

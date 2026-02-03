@@ -1,7 +1,10 @@
 import { Router } from 'express';
 import VeiculoController from '../controllers/VeiculoController';
+import { authenticate } from '../middlewares/auth';
 
 const router = Router();
+
+router.use(authenticate); // todas as rodas precisam de autenticacao
 
 // Rotas de veículo
 router.post('/veiculo', VeiculoController.create);
