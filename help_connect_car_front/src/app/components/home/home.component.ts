@@ -3,14 +3,15 @@ import { VeiculoService } from './../../service/veiculo.service';
 import { environment } from './../../../environments/environment';
 import { Component } from '@angular/core';
 import { CardComponent } from "../card/card.component";
-import { FooterComponent } from "../footer/footer.component";
+import { FooterComponent } from "../util/footer/footer.component";
 import { AuthService } from '../../service/auth.service';
 import { Veiculo } from '../../models/Veiculo';
+import { FiltroComponent } from "../util/filtro/filtro.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardComponent, FooterComponent],
+  imports: [CardComponent, FooterComponent, FiltroComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -19,6 +20,7 @@ export class HomeComponent {
   public nome: string = environment.nome;
   public veiculos: Veiculo[] = [];
   public historico: Veiculo[] = [];
+  public filtro: boolean = true;
 
   constructor(
     private authService: AuthService,
@@ -88,6 +90,21 @@ export class HomeComponent {
       this.getAllVeiculos(); // recarrega a lista de veiculos apos a reserva feita
       this.getAllHistoricoVeiculosByIdUsuario(environment.id); // recarrega a lista de veiculos apos a reserva atualizada
     });
+  }
+
+  receberFiltro(event: any) {
+    console.log('Filtro recebido:', event);
+    this.veiculoService.postFiltro(event).subscribe((resp: any) => {
+      console.log('Filtro aplicado:', resp);
+      this.veiculos = resp;
+      console.log(`this.veiculos: `, this.veiculos);
+    }, err => {
+      this.veiculos = [];
+    });
+  }
+
+  isFiltro() {
+    this.filtro = false;
   }
 
 }

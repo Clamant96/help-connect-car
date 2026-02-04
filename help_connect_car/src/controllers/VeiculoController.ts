@@ -87,6 +87,84 @@ class VeiculoController {
     }
   }
 
+  public async getByFilter(req: Request, res: Response): Promise<Response> {
+    try {
+      // Obter os parâmetros da query string
+      const { name, type, engine, size } = req.body;
+
+      const nomeString = name as string; // Cast para string
+
+      // Criar objeto de filtro
+      const filter: any = { disponivel: true };
+
+      // Verifica se existe filtros aplicados
+      const hasFilters = name && name != "" && name != null && name != undefined || type && type?.length > 0 || engine && engine?.length > 0 || size && size?.length > 0;
+
+      // Caso nao se tenha filtros, retorna o endpoint get all veiculos 
+      if (!hasFilters) {
+        const veiculos = await Veiculo.find(filter);
+        
+        if (veiculos.length === 0) {
+          return res.status(500).json({ error: 'Erro ao buscar veículos' });
+        }
+        
+        return res.json(veiculos);
+      }
+
+      if(name && name != "" && name != null && name != undefined) {
+        filter.name = { 
+          $regex: nomeString, 
+          $options: 'i' // Adicione isso para case-insensitive
+        };
+      }
+
+      // Filtro por type (tipo de carroceria)
+      if (type && type?.length > 0) {
+        // Se type for uma string (único valor ou lista separada por vírgulas)
+        const typeArray = Array.isArray(type) 
+          ? type 
+          : (type as string).split(',').map(t => t.trim());
+        
+        filter.type = { $in: typeArray };
+      }
+      
+      // Filtro por engine (qtd de cavalos)
+      if (engine && engine?.length > 0) {
+        const engineArray = Array.isArray(engine) 
+          ? engine 
+          : (engine as string).split(',').map(e => e.trim());
+        
+        filter.engine = { $in: engineArray };
+      }
+      
+      // Filtro por size (qtd lugares)
+      if (size && size?.length > 0) {
+        const sizeArray = Array.isArray(size) 
+          ? size.map(s => Number(s)) 
+          : (size as string).split(',').map(s => Number(s.trim()));
+        
+        filter.size = { $in: sizeArray };
+      }
+
+      console.log('filter: ', filter);
+      
+      // Executar a consulta
+      const veiculos = await Veiculo.find(filter);
+      
+      if (veiculos.length === 0) {
+        return res.status(404).json({ 
+          error: 'Nenhum veículo encontrado com os filtros aplicados',
+          filters: filter 
+        });
+      }
+      
+      return res.json(veiculos);
+    } catch (error) {
+      console.error('Erro ao buscar veículos:', error);
+      return res.status(500).json({ error: 'Erro ao buscar veículos' });
+    }
+  }
+
   // Atualizar veículo
   public async update(req: Request, res: Response): Promise<Response> {
     try {

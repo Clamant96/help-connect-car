@@ -14,5 +14,6 @@ router.delete('/veiculo/:id', VeiculoController.delete);
 router.get('/veiculo/:id', VeiculoController.getById);
 router.get('/veiculo', VeiculoController.getAll);
 router.get('/veiculos/nome/:nome', VeiculoController.getByNome);
+router.post('/veiculos/filtro', VeiculoController.getByFilter);
 
 export default router;

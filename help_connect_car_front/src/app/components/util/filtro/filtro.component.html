@@ -1,0 +1,82 @@
+<div class="bloco">
+  <div class="seach">
+    <div class="icone">
+      <img src="icon/search.svg" alt="Search" />
+    </div>
+    <input type="search" placeholder="Buscar" />
+  </div>
+  <div class="acoes">
+    <span>Cancelar</span>
+    <span>Filtros</span>
+    <span>Limpar</span>
+  </div>
+  <div class="filtro">
+    <div class="opcao">
+      <span>Tipos de carrocerias</span>
+      <div class="img">
+        <img src="icon/expadir.svg" alt="status opcao" />
+      </div>
+    </div>
+    <div class="itens">
+      @for (type of filtraValoresUnicos('type'); track $index) {
+        @if(filtraValorSelecionado('type', type)) {
+          <div class="item" (click)="selecionar('type', type)" >
+            <div class="img">
+              <img src="icon/selecionado_1.svg" alt="" />
+            </div>
+            <span>{{ type }}</span>
+          </div>
+        } @else {
+          <div class="item" (click)="selecionar('type', type)" >
+            <div class="img">
+              <img src="icon/nao_selecionado_1.svg" alt="" />
+            </div>
+            <span>{{ type }}</span>
+          </div>
+        }
+      }
+    </div>
+  </div>
+  <div class="filtro">
+    <div class="opcao">
+      <span>Tipos de motores</span>
+      <div class="img">
+        <img src="icon/expadir.svg" alt="status opcao" />
+      </div>
+    </div>
+    <div class="itens" style="gap: 13px 18px;">
+      @for (engine of filtraValoresUnicos('engine'); track $index) {
+        @if(filtraValorSelecionado('engine', engine)) {
+          <div class="item botao" style="background-color: var(--background-3);" (click)="selecionar('engine', engine)" >
+            <span>Motor {{ engine }}</span>
+          </div>
+        } @else {
+          <div class="item botao" style="background-color: var(--background-6);" (click)="selecionar('engine', engine)" >
+            <span style="color: var(--font-color-1);" >Motor {{ engine }}</span>
+          </div>
+        }
+      }
+    </div>
+  </div>
+  <div class="filtro">
+    <div class="opcao">
+      <span>Quantidade de lugares</span>
+      <div class="img">
+        <img src="icon/expadir.svg" alt="status opcao" />
+      </div>
+    </div>
+    <div class="itens" style="gap: 10px;">
+      @for (size of filtraValoresUnicos('size'); track $index) {
+        @if(filtraValorSelecionado('size', size)) {
+          <div class="item botao" style="width: 48px; height: 38px; opacity: 1; gap: 10px; background-color: var(--background-3);" (click)="selecionar('size', size)" >
+            <span>{{ formataSize(size) }}</span>
+          </div>
+        } @else {
+          <div class="item botao" style="width: 48px; height: 38px; opacity: 1; gap: 10px; background-color: var(--background-6);" (click)="selecionar('size', size)" >
+            <span style="color: var(--font-color-1);" >{{ formataSize(size) }}</span>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>

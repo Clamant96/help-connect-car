@@ -42,6 +42,14 @@ export class VeiculoService {
     return this.http.get(`${this.url}/veiculos/nome/${nome}`, {headers: headers})
   }
 
+  postFiltro(filtro: any) {
+    const headers = new HttpHeaders({
+      'Authorization': `${environment.token}`,
+      'Content-Type': 'application/json'
+    })
+    return this.http.post(`${this.url}/veiculos/filtro`, filtro, {headers: headers})
+  }
+
   postVeiculo(veiculo: Veiculo) {
     const headers = new HttpHeaders({
       'Authorization': `${environment.token}`,

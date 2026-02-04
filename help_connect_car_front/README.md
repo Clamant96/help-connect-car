@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
 
+## Instalando o NVM
+`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
+
+## Define a versao do node
+`nvm install 20.0.0` 
+`nvm use node 20.0.0`
+
+## Versao Angular
+`npm install -g @angular/cli@18` # Versao angular 18
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
