@@ -1,12 +1,12 @@
 <div class="bloco">
   <div class="seach">
-    <div class="icone">
+    <div class="icone" (click)="this.statusFiltro(false)" >
       <img src="icon/search.svg" alt="Search" />
     </div>
-    <input type="search" placeholder="Buscar" />
+    <input [(ngModel)]="this.filtro.name" type="search" placeholder="Buscar" />
   </div>
   <div class="acoes">
-    <span>Cancelar</span>
+    <span (click)="this.statusFiltro(false)" >Cancelar</span>
     <span>Filtros</span>
     <span>Limpar</span>
   </div>
@@ -77,6 +77,11 @@
           </div>
         }
       }
+    </div>
+  </div>
+  <div class="enviar-filtro">
+    <div class="enviar" (click)="this.enviarStatusReserva()" >
+      <span>Aplicar filtro</span>
     </div>
   </div>
 </div>

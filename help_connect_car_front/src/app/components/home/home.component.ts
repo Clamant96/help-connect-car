@@ -3,15 +3,15 @@ import { VeiculoService } from './../../service/veiculo.service';
 import { environment } from './../../../environments/environment';
 import { Component } from '@angular/core';
 import { CardComponent } from "../card/card.component";
-import { FooterComponent } from "../util/footer/footer.component";
 import { AuthService } from '../../service/auth.service';
 import { Veiculo } from '../../models/Veiculo';
 import { FiltroComponent } from "../util/filtro/filtro.component";
+import { FooterComponent } from "../util/footer/footer.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardComponent, FooterComponent, FiltroComponent],
+  imports: [CardComponent, FiltroComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -20,7 +20,7 @@ export class HomeComponent {
   public nome: string = environment.nome;
   public veiculos: Veiculo[] = [];
   public historico: Veiculo[] = [];
-  public filtro: boolean = true;
+  public filtro: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -103,8 +103,16 @@ export class HomeComponent {
     });
   }
 
+  receberStatusFiltro(event: any) {
+    this.filtro = event;
+  }
+
+  receberMenuStatus(event: any) {
+
+  }
+
   isFiltro() {
-    this.filtro = false;
+    this.filtro = !this.filtro;
   }
 
 }

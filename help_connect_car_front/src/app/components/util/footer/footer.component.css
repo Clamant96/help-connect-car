@@ -1,9 +1,21 @@
 footer {
-  width: 100%;
-  height: auto;
+  margin-top: 23px;
+
+  width: calc(100vw - 15px);
+  height: 98px;
+  opacity: 1;
+  top: 828px;
+  left: 1px;
+  gap: 46px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  box-shadow: 0px -6px 6px 0px #94949417;
+
+}
+
+footer .img {
+  cursor: pointer;
 }

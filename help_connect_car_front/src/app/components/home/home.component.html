@@ -1,9 +1,10 @@
 <section>
-  <!-- @if(filtro) {
-    <app-filtro [veiculos]="veiculos"></app-filtro>
-  } -->
-
-  <app-filtro (filtroAplicado)="this.receberFiltro($event)" ></app-filtro>
+  @if(filtro) {
+    <app-filtro
+      (filtroAplicado)="this.receberFiltro($event)"
+      (filtroStatus)="this.receberStatusFiltro($event)"
+    ></app-filtro>
+  }
 
   <div class="bloco">
     <div class="perfil">
@@ -49,6 +50,11 @@
         }
       </div>
     </div>
+    <app-footer
+      (menuStatus)="receberMenuStatus($event)"
+    ></app-footer>
   </div>
-  <div class="background"></div>
+  <div class="background">
+    <div class="overlay"></div>
+  </div>
 </section>

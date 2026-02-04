@@ -21,6 +21,12 @@ section .background .img {
 
 }
 
+section .background .overlay {
+  width: 100%;
+  height: 270px;
+  background-color: var(--overlay-1);
+}
+
 section .bloco {
   position: absolute;
 
@@ -166,6 +172,8 @@ section .bloco .pesquisa .filtro {
 
   gap: 9.39px;
 
+  cursor: pointer;
+
 }
 
 section .bloco .pesquisa .filtro .icone {
@@ -240,18 +248,15 @@ section .bloco .reservas .historico {
 
 }
 
-app-footer {
+app-filtro {
   position: absolute;
 
-  bottom: 0;
+  top: 0;
 
-}
-
-app-filtro {
-  width: 100vw;
+  width: 100%;
   height: 100%;
 
-  z-index: 99999999999999999 !important;
+  z-index: 1 !important;
 }
 
 @media (max-width: 428px) {

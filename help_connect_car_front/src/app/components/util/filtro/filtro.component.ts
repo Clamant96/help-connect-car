@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Veiculo } from '../../../models/Veiculo';
 import { VeiculoService } from '../../../service/veiculo.service';
+import { FormsModule } from '@angular/forms';
 
 interface FiltroVeiculo {
   name: string,
@@ -12,13 +13,14 @@ interface FiltroVeiculo {
 @Component({
   selector: 'app-filtro',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './filtro.component.html',
   styleUrl: './filtro.component.css'
 })
 export class FiltroComponent {
   public veiculos: Veiculo[] = [];
   @Output() filtroAplicado = new EventEmitter<FiltroVeiculo>();
+  @Output() filtroStatus = new EventEmitter<boolean>();
 
   public filtro: FiltroVeiculo = {
     name: "",
@@ -40,8 +42,13 @@ export class FiltroComponent {
     });
   }
 
-  enviarStatusReserva(filtro: FiltroVeiculo) {
-    this.filtroAplicado.emit(filtro);
+  enviarStatusReserva() {
+    this.filtroAplicado.emit(this.filtro);
+    this.statusFiltro(false);
+  }
+
+  statusFiltro(status: boolean) {
+    this.filtroStatus.emit(status);
   }
 
   formataSize(size: number): string {
@@ -98,7 +105,5 @@ export class FiltroComponent {
         this.filtro[tipo].splice(index, 1);
       }
     }
-
-    this.enviarStatusReserva(this.filtro);
   }
 }

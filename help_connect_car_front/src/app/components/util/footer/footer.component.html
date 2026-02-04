@@ -1,14 +1,38 @@
 <footer>
-  <div class="img">
-    <img src="icon/inicio.svg" alt="Inicio" />
-  </div>
-  <div class="img">
-    <img src="icon/agendamento.svg" alt="Agendamento" />
-  </div>
-  <div class="img">
-    <img src="icon/central.svg" alt="Central" />
-  </div>
-  <div class="img">
-    <img src="icon/perfil.svg" alt="Perfil" />
-  </div>
+  @if(menu.inicio) {
+    <div class="img" (click)="gerenciaMenu('inicio', false)">
+      <img src="icon/inicio_1.svg" alt="Inicio" />
+    </div>
+  } @else {
+    <div class="img" (click)="gerenciaMenu('inicio', true)">
+      <img src="icon/inicio_0.svg" alt="Inicio" />
+    </div>
+  }
+  @if(menu.agendamento) {
+    <div class="img" (click)="gerenciaMenu('agendamento', false)">
+      <img src="icon/agendamento_1.svg" alt="Agendamento" />
+    </div>
+  } @else {
+    <div class="img" (click)="gerenciaMenu('agendamento', true)">
+      <img src="icon/agendamento_0.svg" alt="Agendamento" />
+    </div>
+  }
+  @if(menu.central) {
+    <div class="img" (click)="gerenciaMenu('central', false)">
+      <img src="icon/central_1.svg" alt="Central" />
+    </div>
+  } @else {
+    <div class="img" (click)="gerenciaMenu('central', true)">
+      <img src="icon/central_0.svg" alt="Central" />
+    </div>
+  }
+  @if(menu.perfil) {
+    <div class="img" (click)="gerenciaMenu('perfil', false)">
+      <img src="icon/perfil_1.svg" alt="Perfil" />
+    </div>
+  } @else {
+    <div class="img" (click)="gerenciaMenu('perfil', true)">
+      <img src="icon/perfil_0.svg" alt="Perfil" />
+    </div>
+  }
 </footer>
