@@ -41,7 +41,7 @@ class VeiculoController {
   // Listar todos os veículos
   public async getAll(req: Request, res: Response): Promise<Response> {
     try {
-      const veiculos = await Veiculo.find();
+      const veiculos = await Veiculo.find({ disponivel: true });
       return res.json(veiculos);
     } catch (error) {
       return res.status(500).json({ error: 'Erro ao buscar veículos' });
@@ -59,6 +59,29 @@ class VeiculoController {
       }
 
       return res.json(veiculo);
+    } catch (error) {
+      return res.status(500).json({ error: 'Erro ao buscar veículo' });
+    }
+  }
+
+  // Buscar veículo por nome
+  public async getByNome(req: Request, res: Response): Promise<Response> {
+    try {
+      const { nome } = req.params;
+      const nomeString = nome as string; // Cast para string
+      
+      const veiculos = await Veiculo.find({ 
+        name: { 
+          $regex: nomeString, 
+          $options: 'i' // Adicione isso para case-insensitive
+        } 
+      });
+
+      if (veiculos.length === 0) {
+        return res.status(404).json({ error: 'Veículo não encontrado' });
+      }
+
+      return res.json(veiculos);
     } catch (error) {
       return res.status(500).json({ error: 'Erro ao buscar veículo' });
     }

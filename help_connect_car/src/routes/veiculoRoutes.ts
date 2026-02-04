@@ -13,5 +13,6 @@ router.put('/veiculo/:id', VeiculoController.update);
 router.delete('/veiculo/:id', VeiculoController.delete);
 router.get('/veiculo/:id', VeiculoController.getById);
 router.get('/veiculo', VeiculoController.getAll);
+router.get('/veiculos/nome/:nome', VeiculoController.getByNome);
 
 export default router;

@@ -99,6 +99,8 @@ section .bloco .enviar {
   align-items: center;
   justify-content: center;
 
+  cursor: pointer;
+
 }
 
 section .bloco .enviar span {

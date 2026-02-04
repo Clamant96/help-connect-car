@@ -1,17 +1,20 @@
 <section>
   <div class="img">
-    <img src="img/cars/Camaro.png" alt="Camaro.png" />
+    <img [src]="'img/cars/' + veiculo.name + '.png'" alt="{{veiculo.name}}" />
   </div>
   <div class="titulo">
-    Mini Cooper - 2021
+    {{veiculo.name}}
   </div>
   <div class="texto">
-    Hatch compacto
+    {{veiculo.type}}
   </div>
   <div class="texto">
-    Motor 1.8
+    {{veiculo.engine}}
   </div>
   <div class="texto">
-    5 Lugares
+    {{veiculo.size || 0}} Lugares
+  </div>
+  <div class="reservar">
+    <span>Reservar</span>
   </div>
 </section>

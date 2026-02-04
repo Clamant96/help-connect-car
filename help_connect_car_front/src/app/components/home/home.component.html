@@ -4,14 +4,14 @@
       <div class="img">
         <img src="img/perfil.svg" alt="Perfil" />
       </div>
-      <span>Olá, Marcos Silva</span>
+      <span>Olá, {{nome}}</span>
     </div>
     <div class="pesquisa">
       <div class="seach">
         <div class="icone">
           <img src="icon/search.svg" alt="Search" />
         </div>
-        <input type="search" placeholder="Buscar carro" />
+        <input type="search" placeholder="Buscar carro" (input)="getAllVeiculosByNome($event)" />
       </div>
       <div class="filtro">
         <div class="icone">
@@ -24,25 +24,17 @@
       <h1>Ultimas reservas</h1>
 
       <div class="historico">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
+        @for (veiculo of historico; track $index) {
+          <app-card [veiculo]="veiculo"></app-card>
+        }
       </div>
 
       <h1>Carros disponíveis</h1>
 
       <div class="historico">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
+        @for (veiculo of veiculos; track $index) {
+          <app-card [veiculo]="veiculo"></app-card>
+        }
       </div>
     </div>
   </div>

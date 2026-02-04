@@ -8,13 +8,13 @@
     </div>
     <div class="inputs">
       <div class="input">
-        <input type="text" placeholder="Usuário" />
+        <input [(ngModel)]="this.user.username" type="text" placeholder="Usuário" />
       </div>
       <div class="input">
-        <input type="password" placeholder="Senha" />
+        <input [(ngModel)]="this.user.senha" type="password" placeholder="Senha" />
       </div>
     </div>
-    <div class="enviar">
+    <div class="enviar" (click)="login()" >
       <span>Entrar</span>
     </div>
     <div class="recuperar-senha">
