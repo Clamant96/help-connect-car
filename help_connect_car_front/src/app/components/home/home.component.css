@@ -1,0 +1,257 @@
+section {
+  width: 100%;
+  height: auto;
+
+}
+
+section .background {
+  width: 100%;
+  height: 270px;
+
+  background-image: url('/img/background_perfil.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+section .background .img {
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco {
+  position: absolute;
+
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+section .bloco .perfil {
+  margin-top: 71px;
+
+  width: 180px;
+  height: 144px;
+  opacity: 1;
+  top: 71px;
+  left: 124px;
+  gap: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+section .bloco .perfil span {
+  font-family: var(--font-family-Poppins);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 100%;
+  letter-spacing: 2.5%;
+
+  color: var(--font-color-3);
+
+}
+
+section .bloco .pesquisa {
+  margin-top: 35px;
+
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+}
+
+section .bloco .pesquisa .seach {
+  padding: 15px 18px;
+  width: calc(70% - 15px);
+  height: calc(56px - 30px);
+
+  opacity: 1;
+  top: 250px;
+  left: 37px;
+  border-radius: 8px;
+
+  background-color: var(--background-2);
+
+  box-shadow: 0px 3px 3px 0px #00000029;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 9.39px;
+
+}
+
+section .bloco .pesquisa .seach .icone {
+  width: 24.61px;
+  height: 24.61px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+section .bloco .pesquisa .seach .icone .img {
+  width: 100%;
+  height: auto;
+
+  opacity: 1;
+  top: 265px;
+  left: 55px;
+  border-radius: 8px;
+
+}
+
+section .bloco .pesquisa .seach input {
+  width: 100%;
+  height: 21px;
+  opacity: 1;
+  top: 269px;
+  left: 89px;
+
+  border: none;
+  outline: none;
+
+  font-family: var(--font-family-Poppins);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+
+  color: var(--font-color-1);
+
+}
+
+section .bloco .pesquisa .seach input::placeholder {
+  color: var(--font-color-1);
+}
+
+section .bloco .pesquisa .filtro {
+  padding: 15px 18px;
+  width: calc(114px - 30px);
+  height: calc(56px - 30px);
+
+  opacity: 1;
+  top: 250px;
+  left: 277px;
+  border-radius: 8px;
+
+  background-color: var(--background-2);
+
+  box-shadow: 0px 3px 3px 0px #00000029;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9.39px;
+
+}
+
+section .bloco .pesquisa .filtro .icone {
+  width: 24.61px;
+  height: 24.61px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+section .bloco .pesquisa .filtro .icone .img {
+  width: 100%;
+  height: auto;
+
+  opacity: 1;
+  top: 265px;
+  left: 55px;
+  border-radius: 8px;
+
+}
+
+section .bloco .pesquisa .filtro span {
+  width: 45px;
+  height: 24px;
+  opacity: 1;
+  top: 267px;
+  left: 327.25px;
+
+  font-family: var(--font-family-Poppins);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0%;
+
+  color: var(--font-color-1);
+
+}
+
+section .bloco .reservas {
+  width: 80%;
+  height: auto;
+
+}
+
+section .bloco .reservas h1 {
+  margin-top: 31px;
+  margin-bottom: 18px;
+
+  font-family: var(--font-family-Inter);
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  color: var(--font-color-1);
+
+}
+
+section .bloco .reservas .historico {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  gap: 32px 25px;
+
+}
+
+app-footer {
+  position: absolute;
+
+  bottom: 0;
+
+}
+
+@media (max-width: 428px) {
+  section .bloco .pesquisa .seach {
+    width: calc(226px - 15px);
+
+    justify-content: center;
+
+  }
+}
