@@ -8,20 +8,23 @@
     </div>
     <div class="inputs">
       <div class="input">
+        <input [(ngModel)]="this.user.nome" type="text" placeholder="Nome" />
+      </div>
+      <div class="input">
         <input [(ngModel)]="this.user.username" type="text" placeholder="Usuário" />
       </div>
       <div class="input">
         <input [(ngModel)]="this.user.senha" type="password" placeholder="Senha" />
       </div>
     </div>
-    <div class="enviar" (click)="login()" >
-      <span>Entrar</span>
+    <div class="enviar" (click)="register()" >
+      <span>Cadastrar</span>
     </div>
     <div class="recuperar-senha">
       <span>Esqueci minha senha</span>
     </div>
     <div class="criar-conta">
-      <span>Ainda não tem cadastro? <a routerLink="/cadastro">Criar conta</a></span>
+      <span>Ja tem conta? <a routerLink="/login">Entrar</a></span>
     </div>
   </div>
 </section>
