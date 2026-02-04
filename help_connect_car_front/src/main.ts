@@ -7,9 +7,9 @@ bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
 
 /* FICA OBSERVANDO SEMPRE QUE A PAGINA E RECARREGADA */
-/* window.addEventListener('beforeunload', function(event) {
+window.addEventListener('beforeunload', function(event) {
   environment.id = '';
   environment.nome = '';
   environment.token = '';
 
-}, false); */
+}, false);

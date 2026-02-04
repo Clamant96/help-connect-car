@@ -1,6 +1,6 @@
 section {
   width: calc(241px - 36px);
-  height: 303px;
+  height: 315px;
   opacity: 1;
   gap: 10px;
   padding-top: 8px;
@@ -61,12 +61,24 @@ section .texto {
 
 }
 
+section .botoes {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+}
+
 section .reservar {
   width: 100%;
   min-height: 40.67px;
   max-height: 40.67px;
   opacity: 1;
-  border-radius: 32px;
+  border-radius: 8px;
 
   background-color: var(--background-3);
 
@@ -91,3 +103,13 @@ section .reservar span {
   color: var(--font-color-3);
 
 }
+
+section .finalizar {
+  background-color: var(--background-4);
+}
+
+section .status, section .status span {
+  cursor: auto;
+}
+
+

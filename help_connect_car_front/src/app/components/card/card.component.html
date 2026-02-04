@@ -14,7 +14,26 @@
   <div class="texto">
     {{veiculo.size || 0}} Lugares
   </div>
-  <div class="reservar">
-    <span>Reservar</span>
-  </div>
+  @if(veiculo.status == 'cancelada') {
+    <div class="reservar status">
+      <span>Cancelado</span>
+    </div>
+  } @else if(veiculo.status == 'finalizada') {
+    <div class="reservar status">
+      <span>Finalizado</span>
+    </div>
+  } @else if(veiculo.status == 'ativa') {
+    <div class="botoes">
+      <div class="reservar" (click)="this.enviarStatusReserva('cancelada', veiculo.reserva)" >
+        <span>Cancelado</span>
+      </div>
+      <div class="reservar finalizar" (click)="this.enviarStatusReserva('finalizada', veiculo.reserva)" >
+        <span>Finalizado</span>
+      </div>
+    </div>
+  } @else {
+    <div class="reservar" (click)="this.enviarIdVeiculo(veiculo._id)" >
+      <span>Reservar</span>
+    </div>
+  }
 </section>

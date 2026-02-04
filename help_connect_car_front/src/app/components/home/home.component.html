@@ -25,7 +25,10 @@
 
       <div class="historico">
         @for (veiculo of historico; track $index) {
-          <app-card [veiculo]="veiculo"></app-card>
+          <app-card
+            [veiculo]="veiculo"
+            (statusReserva)="receberStatusReserva($event)"
+          ></app-card>
         }
       </div>
 
@@ -33,7 +36,10 @@
 
       <div class="historico">
         @for (veiculo of veiculos; track $index) {
-          <app-card [veiculo]="veiculo"></app-card>
+          <app-card
+            [veiculo]="veiculo"
+            (idVeiculo)="receberIdVeiculo($event)"
+          ></app-card>
         }
       </div>
     </div>
