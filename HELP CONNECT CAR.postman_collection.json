@@ -1,0 +1,662 @@
+{
+  "info": {
+    "_postman_id": "998f8520-a3cf-4e71-b368-9a58592f55fb",
+    "name": "HELP CONNECT CAR",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24820842"
+  },
+  "item": [
+    {
+      "name": "USUARIO",
+      "item": [
+        {
+          "name": "GET | /usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/usuario",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "usuario"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET | /usuario/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/usuario/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "usuario",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "69814fbd8c488286fd9fe31b"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST | /usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Kevin\",\r\n    \"username\": \"clamant96\",\r\n    \"senha\": \"123456\",\r\n    \"historico_reserva\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/usuario",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "usuario"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST | /auth/register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Kevin\",\r\n    \"username\": \"clamant98\",\r\n    \"senha\": \"123456\",\r\n    \"historico_reserva\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/auth/register",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST | /auth/login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"clamant98\",\r\n    \"senha\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/auth/login",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT | /usuario/:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Kevin atualizado\",\r\n    \"email\": \"neri.kevin96@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/usuario/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "usuario",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "698123dfb37f1c532e50218d"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE | /usuario/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/usuario/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "usuario",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "698123dfb37f1c532e50218d"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "VEICULO",
+      "item": [
+        {
+          "name": "GET | /veiculo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/veiculo",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "veiculo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET | /veiculo/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/veiculo/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "veiculo",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "698123dfb37f1c532e50218d"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET | /veiculos/nome/:nome",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/veiculos/nome/:nome",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "veiculos",
+                "nome",
+                ":nome"
+              ],
+              "variable": [
+                {
+                  "key": "nome",
+                  "value": "e"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST | /veiculos/filtro",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"\",\r\n    \"type\": [],\r\n    \"engine\": [],\r\n    \"size\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/veiculos/filtro",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "veiculos",
+                "filtro"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST | /veiculo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Partner\",\r\n    \"year\": \"2016\",\r\n    \"type\": \"Utilitário\",\r\n    \"engine\": \"1.6\",\r\n    \"size\": 2,\r\n    \"disponivel\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/veiculo",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "veiculo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST | /veiculos",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n    {\r\n        \"name\": \"Partner\",\r\n        \"year\": \"2016\",\r\n        \"type\": \"Utilitário\",\r\n        \"engine\": \"1.6\",\r\n        \"size\": \"2\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Fiorino\",\r\n        \"year\": \"2017\",\r\n        \"type\": \"Utilitário leve\",\r\n        \"engine\": \"1.6\",\r\n        \"size\": \"2\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Doblo\",\r\n        \"year\": \"2018\",\r\n        \"type\": \"Minivan\",\r\n        \"engine\": \"1.8\",\r\n        \"size\": \"7\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Toro\",\r\n        \"year\": \"2016\",\r\n        \"type\": \"Picape média\",\r\n        \"engine\": \"1.6\",\r\n        \"size\": \"5\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Ford Ká\",\r\n        \"year\": \"2019\",\r\n        \"type\": \"Sedan Compacto\",\r\n        \"engine\": \"1.0\",\r\n        \"size\": \"5\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Versa\",\r\n        \"year\": \"2019\",\r\n        \"type\": \"Sedan médio\",\r\n        \"engine\": \"1.4\",\r\n        \"size\": \"5\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Jetta\",\r\n        \"year\": \"2021\",\r\n        \"type\": \"Sedan grande\",\r\n        \"engine\": \"2.0\",\r\n        \"size\": \"5\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Saveiro\",\r\n        \"year\": \"2018\",\r\n        \"type\": \"Picape leve-média\",\r\n        \"engine\": \"1.6\",\r\n        \"size\": \"5\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Strada\",\r\n        \"year\": \"2016\",\r\n        \"type\": \"Picape leve\",\r\n        \"engine\": \"1.4\",\r\n        \"size\": \"2\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Camaro\",\r\n        \"year\": \"2017\",\r\n        \"type\": \"Coupé\",\r\n        \"engine\": \"2.0\",\r\n        \"size\": \"4\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"T-Cross\",\r\n        \"year\": \"2020\",\r\n        \"type\": \"Crossover\",\r\n        \"engine\": \"1.6\",\r\n        \"size\": \"5\",\r\n        \"disponivel\": true\r\n    },\r\n    {\r\n        \"name\": \"Tiggo 8\",\r\n        \"year\": \"2021\",\r\n        \"type\": \"SUV Grande\",\r\n        \"engine\": \"2.0\",\r\n        \"size\": \"7\",\r\n        \"disponivel\": true\r\n    }\r\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/veiculos",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "veiculos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT | /veiculo/:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Kevin atualizado\",\r\n    \"email\": \"neri.kevin96@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/veiculo/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "veiculo",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "698123dfb37f1c532e50218d"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE | /veiculo/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/veiculo/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "veiculo",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "698137737632690b0e3e0ae3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "RESERVA",
+      "item": [
+        {
+          "name": "GET | /reserva",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/reserva",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "reserva"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET | /reserva/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/reserva/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "reserva",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "698150378c488286fd9fe33a"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET | /reserva/usuario/:idUsuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/reserva/usuario/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "reserva",
+                "usuario",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "69814fbd8c488286fd9fe31b"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST | /reserva",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"usuarioId\": \"69814fbd8c488286fd9fe31b\",\r\n    \"veiculoId\": \"69814fff8c488286fd9fe325\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/reserva",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "reserva"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST | /reserva/:id/finalizar",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"finalizada\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/reserva/:id/finalizar",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "reserva",
+                ":id",
+                "finalizar"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "698150378c488286fd9fe33a"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST | /reserva/:id/finalizar",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"cancelada\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/reserva/:id/finalizar",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "reserva",
+                ":id",
+                "finalizar"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "69813e436cd1cc2b563821a7"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT | /reserva/:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Kevin atualizado\",\r\n    \"email\": \"neri.kevin96@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_url}}/reserva/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "reserva",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "698123dfb37f1c532e50218d"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE | /reserva/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{server_url}}/reserva/:id",
+              "host": [
+                "{{server_url}}"
+              ],
+              "path": [
+                "reserva",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "698123dfb37f1c532e50218d"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTgxNGZiZDhjNDg4Mjg2ZmQ5ZmUzMWIiLCJ1c2VybmFtZSI6ImNsYW1hbnQ5OCIsIm5vbWUiOiJLZXZpbiIsImlhdCI6MTc3MDE2NTc1MCwiZXhwIjoxNzcwMjUyMTUwfQ.3sdKzFJcQ6hfjMoUW2SvsiAkD8T6MxjAYEx4KyG06Js",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "server_url",
+      "value": ""
+    }
+  ]
+}
