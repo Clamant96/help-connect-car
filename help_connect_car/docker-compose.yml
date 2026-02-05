@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongodb:
     image: mongo:latest
-    container_name: help_connect_car
+    container_name: help_connect_car_mongodb
     ports:
       - "27017:27017"
     environment:
@@ -14,7 +14,7 @@ services:
 
   app:
     build: .
-    container_name: help_connect_car
+    container_name: help_connect_car_app
     ports:
       - "3000:3000"
     environment:
