@@ -266,4 +266,25 @@ app-filtro {
     justify-content: center;
 
   }
+
+  section .bloco .reservas .historico {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+    gap: 32px 25px;
+
+    overflow-x: scroll;
+
+  }
+
+  section .bloco .reservas {
+    margin-left: 5%;
+    width: calc(100% - 5%);
+    height: auto;
+  }
 }

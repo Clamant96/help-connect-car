@@ -112,4 +112,8 @@ section .status, section .status span {
   cursor: auto;
 }
 
-
+@media (max-width: 428px) {
+  section {
+    width: calc(241px - 17.6px);
+  }
+}

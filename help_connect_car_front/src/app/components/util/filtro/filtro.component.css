@@ -286,3 +286,15 @@
   color: var(--font-color-3);
 
 }
+
+@media (max-width: 428px) {
+  .bloco .filtro {
+    width: 100%;
+  }
+
+  .bloco .acoes {
+    margin: 0% 0%;
+    width: 80%;
+    height: 59px;
+  }
+}
