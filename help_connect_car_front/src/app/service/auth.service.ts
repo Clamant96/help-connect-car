@@ -24,6 +24,10 @@ export class AuthService {
     return this.http.post<any>(`${this.url}/auth/login`, user)
   }
 
+  esqueciSenha(user: any) {
+    return this.http.put<User>(`${this.url}/auth/esqueci-senha`, user)
+  }
+
   logout(): void {
     environment.id = '';
     environment.nome = '';

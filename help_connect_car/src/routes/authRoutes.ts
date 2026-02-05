@@ -8,6 +8,7 @@ const router = Router();
 router.post('/auth/register', AuthController.register);
 router.post('/auth/login', AuthController.login);
 router.post('/auth/refresh-token', AuthController.refreshToken);
+router.put('/auth/esqueci-senha', AuthController.updatePassword);
 
 // Rotas protegidas (requerem autenticação)
 router.get('/auth/me', authenticate, AuthController.me);

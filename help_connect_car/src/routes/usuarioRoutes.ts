@@ -10,4 +10,5 @@ router.put('/usuario/:id', authenticate, requireSelfOrAdmin, UsuarioController.u
 router.delete('/usuario/:id', authenticate, requireSelfOrAdmin, UsuarioController.delete);
 router.get('/usuario/:id', authenticate, requireSelfOrAdmin, UsuarioController.getById);
 router.get('/usuario', authenticate, requireSelfOrAdmin, UsuarioController.getAll);
+
 export default router;

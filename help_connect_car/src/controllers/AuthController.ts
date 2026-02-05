@@ -297,6 +297,61 @@ class AuthController {
       });
     }
   }
+
+  // Atualizar senha do usuário
+  public async updatePassword(req: Request, res: Response): Promise<Response> {
+    try {
+      var senhaCriptografada = '';
+      const { username, senha, confirmarSenha } = req.body;
+
+      // Validar campos obrigatórios
+      if (!username || !senha || !confirmarSenha) {
+        return res.status(400).json({ 
+          error: 'Todos os campos são obrigatórios: username, senha, confirmarSenha' 
+        });
+      }
+
+      // Verificar se as novas senhas coincidem
+      if (senha !== confirmarSenha) {
+        return res.status(400).json({ 
+          error: 'Nova senha e confirmação não coincidem' 
+        });
+      }
+
+      // Buscar usuário com a senha (precisamos da senha atual para comparar)
+      const user = await User.findOne({username: username});
+      
+      if (!user) {
+        return res.status(404).json({ error: 'Usuário não encontrado' });
+      }
+
+      // Criptografar a nova senha
+      try {
+        const salt = await bcrypt.genSalt(10);
+        senhaCriptografada = await bcrypt.hash(senha, salt);
+      } catch (error: any) {
+        console.log('Erro ao criptografar senha:', error);
+        senhaCriptografada = senha
+      }
+
+      // Atualizar a senha
+      user.senha = senhaCriptografada;
+      await user.save();
+
+      // Retornar usuário sem a senha
+      const userResponse = user.toObject();
+      userResponse.senha = ''; // zera a senha para retornar no endpoint apos o cadastro
+
+      return res.json({ 
+        message: 'Senha atualizada com sucesso',
+        user: userResponse 
+      });
+
+    } catch (error: any) {
+      console.error('Erro ao atualizar senha:', error);
+      return res.status(500).json({ error: 'Erro ao atualizar senha' });
+    }
+  }
 }
 
 export default new AuthController();
